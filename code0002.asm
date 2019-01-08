@@ -20,18 +20,21 @@ MAIN PROC
         INT 21H                                      
         
         CALL INPUT 
+        CALL NL
         
         CMP BL, 0DH
         JE EXIT
             
-        CALL NL
+        
         
         LEA DX, msg2            
         MOV AH, 9
         INT 21H
         
         CALL TO_HEXA   
-        CALL NL
+        CALL NL  
+        
+        JMP WHILE1
     
     
     EXIT:
